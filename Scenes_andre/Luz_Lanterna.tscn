@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdfi73qvj1lxy"]
+
+[ext_resource type="Texture2D" uid="uid://s8rbgty0ybj6" path="res://Assets_andre/Light_Cone.png" id="1_b4kro"]
+[ext_resource type="Texture2D" uid="uid://djsnxbj727bof" path="res://icon.svg" id="2_s4eqj"]
+
+[node name="Light Test" type="Node2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-3, 1.90735e-06)
+scale = Vector2(0.0985011, 0.0736301)
+texture = ExtResource("1_b4kro")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_s4eqj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]

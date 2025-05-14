@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://e86lmo70nfay"]
+[gd_scene load_steps=3 format=3 uid="uid://e86lmo70nfay"]
 
 [ext_resource type="Script" uid="uid://kllfyyxrrjly" path="res://Scripts/control.gd" id="1_crttf"]
-[ext_resource type="Texture2D" uid="uid://djsnxbj727bof" path="res://icon.svg" id="2_40h0n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_62e2m"]
 font_size = 64
@@ -65,10 +64,6 @@ text = "INICIAR JOGO"
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SAIR DO JOGO"
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-279, 558)
-texture = ExtResource("2_40h0n")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

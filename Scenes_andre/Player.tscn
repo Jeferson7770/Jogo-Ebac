@@ -54,6 +54,7 @@ sprite_frames = SubResource("SpriteFrames_kyqiw")
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_nn08x")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="test_local_light" type="PointLight2D" parent="."]
+visible = false
 energy = 0.15
 texture = ExtResource("3_gntrk")

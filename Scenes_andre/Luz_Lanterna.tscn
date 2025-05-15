@@ -16,8 +16,8 @@ texture = SubResource("PlaceholderTexture2D_8niqu")
 script = ExtResource("1_xfd2m")
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite_Lanterna"]
-position = Vector2(0, 5.26234e-09)
-scale = Vector2(0.034, -0.051)
+position = Vector2(2.38419e-07, 5.26234e-09)
+scale = Vector2(0.054841, -0.051)
 energy = 0.5
 shadow_enabled = true
 texture = ExtResource("1_b4kro")

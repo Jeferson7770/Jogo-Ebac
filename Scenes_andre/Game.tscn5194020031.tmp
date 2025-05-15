@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bne0m2y40ysfb"]
+[gd_scene load_steps=14 format=4 uid="uid://bne0m2y40ysfb"]
 
 [ext_resource type="Texture2D" uid="uid://bpitbigr6kaer" path="res://Assets_andre/Brachys Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_gl6un"]
 [ext_resource type="PackedScene" uid="uid://ducmgsq8pki57" path="res://Scenes_andre/Player.tscn" id="1_iukft"]
@@ -7,6 +7,24 @@
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xx6eg"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4tn45"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1dc6i"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4aebx"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_spoot"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a14ij"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, -3.95689, -5.93534, -4.13675, -5.57562, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dw66r"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, -3.95689, -5.93534, -4.13675, -5.57562, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5yw3"]
 texture = ExtResource("1_gl6un")
@@ -18,12 +36,14 @@ texture = ExtResource("1_gl6un")
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1dc6i")
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:0/0 = 0
+6:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_a14ij")
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:0/0 = 0
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -40,14 +60,18 @@ texture = ExtResource("1_gl6un")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_4tn45")
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_4aebx")
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:1/0 = 0
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_spoot")
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:1/0 = 0
+6:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dw66r")
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
 7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -188,11 +212,11 @@ position_smoothing_enabled = true
 position = Vector2(1, 5)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.219501, 0.219501, 0.219501, 1)
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(48, -3)
-tile_map_data = PackedByteArray("AAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAEAAEAAAD7/wEAAAAEAAEAAAD6/wEAAAAEAAEAAAD5/wEAAAAEAAEAAAAFAAAAAAAIAAAAAAAGAP//AAAIAAAAAAAHAP7/AAAIAAAAAAAIAP3/AAAIAAAAAAAJAPz/AAAIAAAAAAAKAPz/AAAIAAAAAAALAPz/AAAJAAAAAAAMAPz/AAAKAAAAAAANAPz/AAALAAAAAAAOAPz/AAAJAAAAAAAPAPz/AAAKAAAAAAAQAPz/AAALAAAAAAARAPz/AAAIAAEAAAASAPz/AAAIAAEAAAATAPz/AAAIAAEAAAARAP3/AAAIAAEAAAASAP3/AAAIAAEAAAATAP3/AAAIAAEAAAAUAP3/AAAIAAEAAAASAP7/AAAIAAEAAAATAP7/AAAIAAEAAAAUAP7/AAAIAAEAAAAVAP7/AAAIAAEAAAD4/wEAAAAEAAEAAAD5/wAAAAAEAAAAAAD4////AAAEAAAAAAD3//7/AAAEAAAAAAD2//3/AAAEAAAAAAD2//7/AAAEAAEAAAD2////AAAEAAEAAAD2/wAAAAAEAAEAAAD2/wEAAAAEAAEAAAD3////AAAEAAEAAAD3/wAAAAAEAAEAAAD3/wEAAAAEAAEAAAD4/wAAAAAEAAEAAADz//3/AAAJAAEAAAD0//3/AAAKAAEAAAD1//3/AAALAAEAAADy//3/AAACAAAAAADx//3/AAACAAAAAADw//3/AAACAAAAAADv//3/AAACAAAAAADu//3/AAACAAAAAAAGAAAAAAAIAAAAAAAHAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAJAAAAAAAIAAAAAAAJAP//AAAIAAAAAAAJAP7/AAAIAAAAAAAJAP3/AAAIAAAAAAAKAP3/AAAIAAAAAAAKAP7/AAAIAAAAAAAKAP//AAAIAAAAAAAKAAAAAAAIAAAAAAAIAP7/AAAIAAAAAAAIAP//AAAIAAAAAAAHAP//AAAIAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAEAAEAAAD7/wEAAAAEAAEAAAD6/wEAAAAEAAEAAAD5/wEAAAAEAAEAAAAFAAAAAAAIAAAAAAAGAAAAAAAIAAAAAAAHAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAJAAAAAAAIAAAAAAAKAAAAAAAIAAAAAAAGAP//AAAIAAAAAAAHAP//AAAIAAAAAAAIAP//AAAIAAAAAAAJAP//AAAIAAAAAAAKAP//AAAIAAAAAAAHAP7/AAAIAAAAAAAIAP7/AAAIAAAAAAAJAP7/AAAIAAAAAAAKAP7/AAAIAAAAAAAIAP3/AAAIAAAAAAAJAP3/AAAIAAAAAAAKAP3/AAAIAAAAAAAJAPz/AAAIAAAAAAAKAPz/AAAIAAAAAAALAPz/AAAJAAAAAAAMAPz/AAAKAAAAAAANAPz/AAALAAAAAAAOAPz/AAAJAAAAAAAPAPz/AAAKAAAAAAAQAPz/AAALAAAAAAARAPz/AAAIAAEAAAASAPz/AAAIAAEAAAATAPz/AAAIAAEAAAARAP3/AAAIAAEAAAASAP3/AAAIAAEAAAATAP3/AAAIAAEAAAAUAP3/AAAIAAEAAAASAP7/AAAIAAEAAAATAP7/AAAIAAEAAAAUAP7/AAAIAAEAAAAVAP7/AAAIAAEAAAD4/wEAAAAEAAEAAAD5/wAAAAAEAAAAAAD4////AAAEAAAAAAD3//7/AAAEAAAAAAD2//3/AAAEAAAAAAD2//7/AAAEAAEAAAD2////AAAEAAEAAAD2/wAAAAAEAAEAAAD2/wEAAAAEAAEAAAD3////AAAEAAEAAAD3/wAAAAAEAAEAAAD3/wEAAAAEAAEAAAD4/wAAAAAEAAEAAADz//3/AAAJAAEAAAD0//3/AAAKAAEAAAD1//3/AAALAAEAAADy//3/AAACAAAAAADx//3/AAACAAAAAADw//3/AAACAAAAAADv//3/AAACAAAAAADu//3/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_kldst")
 
 [node name="Background" type="Sprite2D" parent="."]

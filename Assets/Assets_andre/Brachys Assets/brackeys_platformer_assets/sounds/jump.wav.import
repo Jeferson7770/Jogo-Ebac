@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2iax4rp11l4f"
+path="res://.godot/imported/jump.wav-5eb58e7edaeb0efa682a0909d9f2ed32.sample"
+
+[deps]
+
+source_file="res://Assets/Assets_andre/Brachys Assets/brackeys_platformer_assets/sounds/jump.wav"
+dest_files=["res://.godot/imported/jump.wav-5eb58e7edaeb0efa682a0909d9f2ed32.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

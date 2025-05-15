@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdfi73qvj1lxy"]
+
+[ext_resource type="Texture2D" uid="uid://s8rbgty0ybj6" path="res://Assets/Lights/Light_Cone.png" id="1_b4kro"]
+[ext_resource type="Script" uid="uid://u7kn62gjve1f" path="res://Scripts/Lanterna/lookAtMouse.gd" id="1_xfd2m"]
+[ext_resource type="Script" uid="uid://c8wff4dn8wrug" path="res://Scripts/Lanterna/lantern.gd" id="2_bmowh"]
+[ext_resource type="Texture2D" uid="uid://djsnxbj727bof" path="res://icon.svg" id="2_s4eqj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8niqu"]
+
+[node name="Lanterna" type="Node2D"]
+
+[node name="Sprite_Lanterna" type="Sprite2D" parent="."]
+position = Vector2(0, 1.49012e-08)
+scale = Vector2(5.6338, -2.83166)
+texture = SubResource("PlaceholderTexture2D_8niqu")
+script = ExtResource("1_xfd2m")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite_Lanterna"]
+position = Vector2(2.38419e-07, 5.26234e-09)
+scale = Vector2(0.055, -0.146)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("1_b4kro")
+offset = Vector2(417.03, -7.705)
+script = ExtResource("2_bmowh")
+
+[node name="Area2D" type="Area2D" parent="Sprite_Lanterna/PointLight2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite_Lanterna/PointLight2D/Area2D"]
+polygon = PackedVector2Array(20.3043, -27.1628, 710.652, -258.047, 730.956, -258.047, 751.261, -244.465, 771.565, -217.302, 791.869, -190.14, 802.021, -149.395, 812.174, -95.0698, 822.326, -40.7442, 822.326, 27.1628, 812.174, 95.0698, 802.021, 135.814, 791.869, 162.977, 771.565, 203.721, 761.413, 217.302, 741.108, 230.884, 720.804, 244.465, 20.3043, 27.1628, 0, 0)
+
+[node name="background_editor" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-879, -789)
+scale = Vector2(25.4141, 17.2363)
+texture = ExtResource("2_s4eqj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+zoom = Vector2(30, 30)
+
+[connection signal="body_entered" from="Sprite_Lanterna/PointLight2D/Area2D" to="Sprite_Lanterna/PointLight2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sprite_Lanterna/PointLight2D/Area2D" to="Sprite_Lanterna/PointLight2D" method="_on_area_2d_body_exited"]

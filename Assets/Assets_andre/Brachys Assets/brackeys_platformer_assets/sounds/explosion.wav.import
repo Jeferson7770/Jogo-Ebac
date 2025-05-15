@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr4ls3wojb6fl"
+path="res://.godot/imported/explosion.wav-721e344c86286573782d94765c98f2cb.sample"
+
+[deps]
+
+source_file="res://Assets/Assets_andre/Brachys Assets/brackeys_platformer_assets/sounds/explosion.wav"
+dest_files=["res://.godot/imported/explosion.wav-721e344c86286573782d94765c98f2cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

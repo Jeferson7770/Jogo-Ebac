@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/scale=1.13
 
 [input]
 
@@ -49,6 +50,18 @@ ui_down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_render/layer_1="player"
+2d_render/layer_2="world"
+2d_render/layer_3="enemies"
+2d_render/layer_4="items"
+2d_physics/layer_1="player"
+2d_physics/layer_2="word"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="items"
+2d_physics/layer_5="hitbox"
 
 [rendering]
 

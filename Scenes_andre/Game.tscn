@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bpitbigr6kaer" path="res://Assets_andre/Brachys Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_gl6un"]
 [ext_resource type="PackedScene" uid="uid://ducmgsq8pki57" path="res://Scenes_andre/Player.tscn" id="1_iukft"]
 [ext_resource type="PackedScene" uid="uid://cdfi73qvj1lxy" path="res://Scenes_andre/Luz_Lanterna.tscn" id="2_xx6eg"]
-[ext_resource type="Texture2D" uid="uid://bw2aju3ojtklw" path="res://Assets_andre/Background.jpeg" id="5_a14ij"]
+[ext_resource type="Texture2D" uid="uid://bw2aju3ojtklw" path="res://Assets_andre/Gus Assets/Background.jpeg" id="5_a14ij"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xx6eg"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

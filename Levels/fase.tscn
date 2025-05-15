@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://caxgvecqwoy5m"]
+[gd_scene load_steps=16 format=3 uid="uid://caxgvecqwoy5m"]
 
 [ext_resource type="Texture2D" uid="uid://drwct7ow6syk1" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_eps7o"]
 [ext_resource type="Texture2D" uid="uid://df0bn1ksb3n7c" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_y6gyh"]
 [ext_resource type="Script" uid="uid://cxx8vh24x2qjm" path="res://Scripts Fase/player.gd" id="1_y8t2b"]
 [ext_resource type="Texture2D" uid="uid://cra5yoqavfqc2" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_87ext"]
+[ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets_andre/light.jpg" id="5_87ext"]
+[ext_resource type="Texture2D" uid="uid://bw2aju3ojtklw" path="res://Assets_andre/Background.jpeg" id="6_2ke8r"]
+[ext_resource type="PackedScene" uid="uid://cdfi73qvj1lxy" path="res://Scenes_andre/Luz_Lanterna.tscn" id="6_os7g0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ke8r"]
 texture = ExtResource("1_y6gyh")
@@ -179,6 +182,7 @@ layer_1/name = "Arvores"
 layer_1/tile_data = PackedInt32Array(2293752, 65537, 1, 2359288, 65537, 2, 2424824, 65537, 3, 2293753, 131073, 1, 2359289, 131073, 2, 2424825, 131073, 3, 2293754, 196609, 1, 2359290, 196609, 2, 2424826, 196609, 3, 2293756, 327681, 1, 2359292, 327681, 2, 2424828, 327681, 3, 2293757, 393217, 1, 2359293, 393217, 2, 2424829, 393217, 3, 2293758, 458753, 1, 2359294, 458753, 2, 2424830, 458753, 3, 2359296, 589825, 3, 2359298, 720897, 3, 2359300, 65537, 3, 2359302, 196609, 3, 2359304, 327681, 3, 2228234, 458753, 1, 2228236, 589825, 1, 2293772, 589825, 2, 2359308, 589825, 3, 2228237, 655361, 1, 2293773, 655361, 2, 2359309, 655361, 3, 2228238, 720897, 1, 2293774, 720897, 2, 2359310, 720897, 3, 2228240, 65537, 1, 2293776, 65537, 2, 2359312, 65537, 3, 2228241, 131073, 1, 2293777, 131073, 2, 2359313, 131073, 3, 2228242, 196609, 1, 2293778, 196609, 2, 2359314, 196609, 3, 2228244, 327681, 1, 2293780, 327681, 2, 2359316, 327681, 3, 2228245, 393217, 1, 2293781, 393217, 2, 2359317, 393217, 3, 2228246, 458753, 1, 2293782, 458753, 2, 2359318, 458753, 3, 2228248, 589825, 1, 2293784, 589825, 2, 2359320, 589825, 3, 2228249, 655361, 1, 2293785, 655361, 2, 2359321, 655361, 3, 2228250, 720897, 1, 2293786, 720897, 2, 2359322, 720897, 3, 2228253, 65537, 1, 2293789, 65537, 2, 2359325, 65537, 3, 2228254, 131073, 1, 2293790, 131073, 2, 2359326, 131073, 3, 2228255, 196609, 1, 2293791, 196609, 2, 2359327, 196609, 3, 2228257, 327681, 1, 2293793, 327681, 2, 2359329, 327681, 3, 2228258, 393217, 1, 2293794, 393217, 2, 2359330, 393217, 3, 2228259, 458753, 1, 2293795, 458753, 2, 2359331, 458753, 3, 2228261, 589825, 1, 2293797, 589825, 2, 2359333, 589825, 3, 2228262, 655361, 1, 2293798, 655361, 2, 2359334, 655361, 3, 2228263, 720897, 1, 2293799, 720897, 2, 2359335, 720897, 3, 2228265, 65537, 1, 2293801, 65537, 2, 2359337, 65537, 3, 2228266, 131073, 1, 2293802, 131073, 2, 2359338, 131073, 3, 2228267, 196609, 1, 2293803, 196609, 2, 2359339, 196609, 3, 2228269, 327681, 1, 2293805, 327681, 2, 2359341, 327681, 3, 2228270, 393217, 1, 2293806, 393217, 2, 2359342, 393217, 3, 2228271, 458753, 1, 2293807, 458753, 2, 2359343, 458753, 3, 2228273, 589825, 1, 2293809, 589825, 2, 2359345, 589825, 3, 2228274, 655361, 1, 2293810, 655361, 2, 2359346, 655361, 3, 2228275, 720897, 1, 2293811, 720897, 2, 2359347, 720897, 3, 2228277, 65537, 1, 2293813, 65537, 2, 2359349, 65537, 3, 2228278, 131073, 1, 2293814, 131073, 2, 2359350, 131073, 3, 2228279, 196609, 1, 2293815, 196609, 2, 2359351, 196609, 3, 2228280, 65537, 1, 2293816, 65537, 2, 2359352, 65537, 3, 2228281, 131073, 1, 2293817, 131073, 2, 2359353, 131073, 3, 2228282, 196609, 1, 2293818, 196609, 2, 2359354, 196609, 3, 2228284, 327681, 1, 2293820, 327681, 2, 2359356, 327681, 3, 2228285, 393217, 1, 2293821, 393217, 2, 2359357, 393217, 3, 2228286, 458753, 1, 2293822, 458753, 2, 2359358, 458753, 3)
 
 [node name="player" type="CharacterBody2D" parent="."]
+z_index = 5
 position = Vector2(700, 258)
 script = ExtResource("1_y8t2b")
 
@@ -187,11 +191,19 @@ position = Vector2(-578, 313)
 sprite_frames = SubResource("SpriteFrames_qcukj")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.958446
+frame_progress = 0.36374
 
 [node name="colision" type="CollisionShape2D" parent="player"]
 position = Vector2(-578, 317)
 shape = SubResource("CapsuleShape2D_v5c45")
+
+[node name="PointLight2D" type="PointLight2D" parent="player"]
+position = Vector2(-578, 317)
+energy = 0.15
+texture = ExtResource("5_87ext")
+
+[node name="Lanterna" parent="player" instance=ExtResource("6_os7g0")]
+position = Vector2(-579, 324)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(37, 1)
@@ -199,3 +211,18 @@ position = Vector2(37, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(543, 605)
 shape = SubResource("RectangleShape2D_wi5t7")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Background2" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(1436, 452)
+scale = Vector2(1.6142, 2.41706)
+texture = ExtResource("6_2ke8r")
+
+[node name="Background3" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-122.5, 454)
+scale = Vector2(1.6142, 2.41706)
+texture = ExtResource("6_2ke8r")

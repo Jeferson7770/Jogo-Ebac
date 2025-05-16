@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c7mlp1dp4x2jp" path="res://Scripts/enemy.gd" id="1_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://djjblc7t784cy" path="res://Assets/Assets_andre/Brachys Assets/brackeys_platformer_assets/sprites/knight.png" id="2_qa73o"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
-size = Vector2(43, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qa73o"]
+radius = 9.21954
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dgb40"]
 atlas = ExtResource("2_qa73o")
@@ -125,8 +125,8 @@ collision_mask = 5
 script = ExtResource("1_qi2p4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
-position = Vector2(2.5, -1)
-shape = SubResource("RectangleShape2D_qi2p4")
+position = Vector2(3, 4)
+shape = SubResource("CircleShape2D_qa73o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -1)
@@ -140,4 +140,4 @@ autoplay = "idle"
 
 [node name="Wall_detector" type="RayCast2D" parent="."]
 position = Vector2(4, -3)
-target_position = Vector2(-20, 0)
+target_position = Vector2(12, 2)

@@ -1,22 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://7t38i72ygtkk"]
+[gd_scene load_steps=12 format=3 uid="uid://7t38i72ygtkk"]
 
 [ext_resource type="Script" uid="uid://cxx8vh24x2qjm" path="res://Scripts/player.gd" id="1_mvpqy"]
-[ext_resource type="Texture2D" uid="uid://16rey5us0kjy" path="res://Assets/Assets_Placeholder/Sprite Pack 2/2 - Mr. Mochi/Jumping (32 x 32).png" id="3_esgq3"]
 [ext_resource type="Texture2D" uid="uid://jlr65bpu2nr0" path="res://Assets/Player/playerwalk-Sheet.png" id="4_rrlj6"]
 [ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets/Lights/light.jpg" id="5_kjkj0"]
 [ext_resource type="PackedScene" uid="uid://cdfi73qvj1lxy" path="res://Prefabs/Lanterna/Luz_Lanterna.tscn" id="6_rrlj6"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5c45"]
-radius = 9.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3564"]
+size = Vector2(13, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gw0hm"]
 atlas = ExtResource("4_rrlj6")
 region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tue77"]
-atlas = ExtResource("3_esgq3")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nupnp"]
 atlas = ExtResource("4_rrlj6")
@@ -40,10 +34,7 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tue77")
-}],
+"frames": [],
 "loop": true,
 "name": &"jump",
 "speed": 5.0
@@ -64,20 +55,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esgq3"]
-size = Vector2(20, 17)
+size = Vector2(13, 15)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+z_index = 5
 collision_mask = 23
 script = ExtResource("1_mvpqy")
 
 [node name="colision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
-shape = SubResource("CapsuleShape2D_v5c45")
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_p3564")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 6)
 sprite_frames = SubResource("SpriteFrames_qcukj")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="animator" type="AnimationPlayer" parent="."]
@@ -87,7 +79,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="collision" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(0, 6.5)
+position = Vector2(-0.5, 6.5)
 shape = SubResource("RectangleShape2D_esgq3")
 debug_color = Color(0.992104, 0, 0.256641, 0.42)
 

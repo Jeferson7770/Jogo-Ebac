@@ -1,11 +1,10 @@
-[gd_scene load_steps=38 format=4 uid="uid://bj2y7dk627ocf"]
+[gd_scene load_steps=36 format=4 uid="uid://bj2y7dk627ocf"]
 
 [ext_resource type="Script" uid="uid://dvyhgwgkfpbwa" path="res://Scripts/Controlers/fase.gd" id="1_874vp"]
 [ext_resource type="Texture2D" uid="uid://cciwugd4ux0cf" path="res://Assets/tile-Sheet.png" id="1_obb1c"]
 [ext_resource type="Texture2D" uid="uid://si1sxk7rh3op" path="res://Assets/Gus Assets/cristal-Sheet.png" id="2_yl7jm"]
 [ext_resource type="Texture2D" uid="uid://ddulnw1f258ot" path="res://Assets/Gus Assets/cor.png" id="3_874vp"]
 [ext_resource type="PackedScene" uid="uid://7t38i72ygtkk" path="res://Prefabs/Actors/player.tscn" id="3_oi6pe"]
-[ext_resource type="Script" uid="uid://bhi8vmxuydt7g" path="res://Scripts/hole_kill.gd" id="5_oi6pe"]
 [ext_resource type="PackedScene" uid="uid://cgvcxrgs6cp0d" path="res://Prefabs/1way platform.tscn" id="6_i20aj"]
 [ext_resource type="PackedScene" uid="uid://c6mx8emxoosbh" path="res://Prefabs/Door.tscn" id="8_7k20q"]
 [ext_resource type="Texture2D" uid="uid://dl58toe0vq1vw" path="res://Assets/Gus Assets/Tutorial_anim.png" id="9_5jp4g"]
@@ -253,9 +252,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl7jm"]
-size = Vector2(98, 104)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxgbn"]
 atlas = ExtResource("9_5jp4g")
 region = Rect2(0, 16, 16, 16)
@@ -413,20 +409,6 @@ collision_layer = 5
 position = Vector2(-178, -437)
 collision_layer = 4
 collision_mask = 4
-
-[node name="Hole01" type="Area2D" parent="."]
-position = Vector2(1258, 165)
-script = ExtResource("5_oi6pe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole01"]
-shape = SubResource("RectangleShape2D_yl7jm")
-
-[node name="Hole02" type="Area2D" parent="."]
-position = Vector2(1672, -83)
-script = ExtResource("5_oi6pe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole02"]
-shape = SubResource("RectangleShape2D_yl7jm")
 
 [node name="1way platform2" parent="." instance=ExtResource("6_i20aj")]
 visible = false

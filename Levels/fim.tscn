@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6dck4n4eewdv"]
+
+[ext_resource type="Script" uid="uid://dllkhg3tgnktk" path="res://Cenas/fim_do_nivel.gd" id="1_m67iy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56ux6"]
+size = Vector2(1339, 155)
+
+[node name="Fim" type="Node2D"]
+
+[node name="Fim do Nivel" type="Area2D" parent="." groups=["Game Over"]]
+script = ExtResource("1_m67iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fim do Nivel"]
+position = Vector2(524.5, 67.5)
+shape = SubResource("RectangleShape2D_56ux6")
+debug_color = Color(0.991259, 0, 0.267899, 0.42)
+
+[connection signal="body_entered" from="Fim do Nivel" to="Fim do Nivel" method="_on_body_entered"]

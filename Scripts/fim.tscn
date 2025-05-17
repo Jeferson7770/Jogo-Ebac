@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmacm5dsd7tsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56ux6"]
+
+[node name="Fim" type="Node2D"]
+
+[node name="Fim do Nivel" type="Area2D" parent="." groups=["Fim", "Game Over", "Game over"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fim do Nivel"]
+shape = SubResource("RectangleShape2D_56ux6")
+
+[connection signal="body_entered" from="Fim do Nivel" to="Fim do Nivel" method="_on_body_entered"]

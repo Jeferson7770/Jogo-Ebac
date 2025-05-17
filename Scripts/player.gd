@@ -48,15 +48,21 @@ func _on_hurtbox_body_entered(body):
 		get_tree().change_scene_to_file("res://Cenas/game_over.tscn") 
 
 
+# Função de morte do personagem
+func die():
+	#anim.play("death")
+	set_process(false)  # Para o processamento do personagem
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file("res://Cenas/game_over.tscn")
+
+# Seguir câmera via RemoteTransform2D
 func follow_camera(camera):
 	var camera_path = camera.get_path()
 	remote_transform.remote_path = camera_path
 
-#funcao em que o player entra na safe zone e indica o fim do level
+# Quando o player entra na zona de fim de fase
 func _on_fim_do_nivel_body_entered(body: Node2D) -> void:
-	#tocar animação da cama == deletar sprite do player -> trocar o sprite da cama pela cama usada
-	
-	#esperar alguns segundos
-	
-	#transicionar para fase 2 == fadeout para uma tela preta com texto -> pedir input do jogador (mouse 1) - > ativar prox cena
-	pass
+	if body == self:
+		#anim.play("sleep")
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file("res://Cenas/fase_2.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bj2y7dk627ocf"]
+[gd_scene load_steps=44 format=4 uid="uid://bj2y7dk627ocf"]
 
 [ext_resource type="Script" uid="uid://dvyhgwgkfpbwa" path="res://Scripts/Controlers/fase.gd" id="1_874vp"]
 [ext_resource type="Texture2D" uid="uid://cciwugd4ux0cf" path="res://Assets/tile-Sheet.png" id="1_obb1c"]
@@ -8,7 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://cgvcxrgs6cp0d" path="res://Prefabs/1way platform.tscn" id="6_i20aj"]
 [ext_resource type="PackedScene" uid="uid://c6mx8emxoosbh" path="res://Prefabs/Door.tscn" id="8_7k20q"]
 [ext_resource type="Texture2D" uid="uid://dl58toe0vq1vw" path="res://Assets/Gus Assets/Tutorial_anim.png" id="9_5jp4g"]
+[ext_resource type="PackedScene" uid="uid://dmacm5dsd7tsp" path="res://Prefabs/hazards/Buraco.tscn" id="10_4gm52"]
 [ext_resource type="PackedScene" uid="uid://y23bojg81drf" path="res://Prefabs/Actors/enemy.tscn" id="10_ryu3p"]
+[ext_resource type="PackedScene" uid="uid://dlhst8tgp2tct" path="res://Cenas/fim_level.tscn" id="11_cvbl2"]
+[ext_resource type="Script" uid="uid://2vvqbn6q0sku" path="res://Scripts/transition.gd" id="12_qcq4q"]
+[ext_resource type="Shader" uid="uid://cdn2n5lc7ncdx" path="res://shaders/trasition.gdshader" id="12_qxgbn"]
+[ext_resource type="Script" uid="uid://cfvwxlmgjr7h5" path="res://Scripts/color_rect.gd" id="13_qxgbn"]
+[ext_resource type="Shader" uid="uid://dow4783fwf232" path="res://shaders/nextLevel.gdshader" id="15_qxgbn"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i20aj"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -362,6 +368,20 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gupph"]
+shader = ExtResource("12_qxgbn")
+shader_parameter/lines = 10.0
+shader_parameter/threshold = 0.0
+shader_parameter/line_color_a = Color(1, 1, 1, 1)
+shader_parameter/line_color_b = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3fdl"]
+shader = ExtResource("15_qxgbn")
+shader_parameter/lines = 10.0
+shader_parameter/threshold = 0.0
+shader_parameter/line_color_a = Color(1, 1, 1, 1)
+shader_parameter/line_color_b = Color(0, 0, 0, 1)
+
 [node name="Fase01" type="Node2D"]
 script = ExtResource("1_874vp")
 
@@ -402,7 +422,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="player" parent="." instance=ExtResource("3_oi6pe")]
-position = Vector2(204, -8)
+position = Vector2(4230, 743)
 collision_layer = 5
 
 [node name="Enemy" parent="." instance=ExtResource("10_ryu3p")]
@@ -475,3 +495,41 @@ scale = Vector2(2.75, 3.41666)
 texture = ExtResource("9_5jp4g")
 region_enabled = true
 region_rect = Rect2(63.9978, 7.81048, 27.6477, 9.06726)
+
+[node name="Buraco" parent="." instance=ExtResource("10_4gm52")]
+position = Vector2(1256, 98)
+scale = Vector2(4.04, 2.76)
+
+[node name="Buraco4" parent="." instance=ExtResource("10_4gm52")]
+position = Vector2(499, -0.999992)
+scale = Vector2(4.04, 2.76)
+
+[node name="Buraco2" parent="." instance=ExtResource("10_4gm52")]
+position = Vector2(1670, -84)
+scale = Vector2(4.72, 2.76)
+
+[node name="Buraco3" parent="." instance=ExtResource("10_4gm52")]
+position = Vector2(3083, 918)
+scale = Vector2(86.2579, -11.6234)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("12_qcq4q")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_gupph")
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_qxgbn")
+
+[node name="Fim_Level" parent="." instance=ExtResource("11_cvbl2")]
+position = Vector2(4497, 674)
+scale = Vector2(15.88, 11.84)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("12_qcq4q")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_x3fdl")
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_qxgbn")

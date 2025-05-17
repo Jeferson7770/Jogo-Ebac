@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlhst8tgp2tct"]
+
+[ext_resource type="Script" uid="uid://brj7mxcmjudym" path="res://Scripts/nextLevel.gd" id="1_y1ta1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv7xj"]
+
+[node name="Fim_Level" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_y1ta1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vv7xj")
+debug_color = Color(0, 0.645452, 0.259766, 0.42)

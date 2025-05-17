@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmacm5dsd7tsp"]
+[gd_scene load_steps=3 format=3 uid="uid://dmacm5dsd7tsp"]
+
+[ext_resource type="Script" uid="uid://bc1r6b12b11l2" path="res://Scripts/fim_do_nivel.gd" id="1_6evgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56ux6"]
 
 [node name="Fim" type="Node2D"]
 
 [node name="Fim do Nivel" type="Area2D" parent="." groups=["Fim", "Game Over", "Game over"]]
+script = ExtResource("1_6evgv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fim do Nivel"]
 shape = SubResource("RectangleShape2D_56ux6")
+debug_color = Color(0.931484, 0, 0.437398, 0.42)
 
 [connection signal="body_entered" from="Fim do Nivel" to="Fim do Nivel" method="_on_body_entered"]

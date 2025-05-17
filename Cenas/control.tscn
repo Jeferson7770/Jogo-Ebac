@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://e86lmo70nfay"]
+[gd_scene load_steps=5 format=3 uid="uid://e86lmo70nfay"]
 
 [ext_resource type="Script" uid="uid://kllfyyxrrjly" path="res://Scripts/Controlers/control.gd" id="1_crttf"]
 [ext_resource type="Texture2D" uid="uid://d1s7as1giyoeu" path="res://Assets/Gus Assets/capa_copiar.jpg" id="2_crttf"]
@@ -7,6 +7,10 @@
 font_size = 64
 outline_size = 6
 outline_color = Color(1, 1, 0.596078, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_crttf"]
+outline_size = 2
+outline_color = Color(0.840763, 0.515346, 0.0636857, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -73,6 +77,19 @@ z_index = -1
 position = Vector2(576, 323.5)
 scale = Vector2(0.6, 0.59537)
 texture = ExtResource("2_crttf")
+
+[node name="Creditos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 963.0
+offset_top = 532.0
+offset_right = 1139.0
+offset_bottom = 635.0
+text = "Um jogo por:
+André Tavares
+Jeferson Moreira
+Gustavo Resende"
+label_settings = SubResource("LabelSettings_crttf")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

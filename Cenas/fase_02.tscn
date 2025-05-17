@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bloalwhhhgmae"]
+[gd_scene load_steps=21 format=4 uid="uid://bloalwhhhgmae"]
 
 [ext_resource type="Script" uid="uid://dvyhgwgkfpbwa" path="res://Scripts/Controlers/fase.gd" id="1_tjgwm"]
 [ext_resource type="Texture2D" uid="uid://cciwugd4ux0cf" path="res://Assets/tile-Sheet.png" id="2_jo4wi"]
@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://si1sxk7rh3op" path="res://Assets/Gus Assets/cristal-Sheet.png" id="4_88rbq"]
 [ext_resource type="PackedScene" uid="uid://7t38i72ygtkk" path="res://Prefabs/Actors/player.tscn" id="5_jor72"]
 [ext_resource type="PackedScene" uid="uid://dytolgulx5u7e" path="res://Prefabs/Actors/enemy02.tscn" id="6_73gf5"]
-[ext_resource type="Script" uid="uid://bhi8vmxuydt7g" path="res://Scripts/hole_kill.gd" id="6_qy44o"]
 [ext_resource type="PackedScene" uid="uid://cgvcxrgs6cp0d" path="res://Prefabs/1way platform.tscn" id="7_tri1b"]
 [ext_resource type="PackedScene" uid="uid://c6mx8emxoosbh" path="res://Prefabs/Door.tscn" id="8_jo4wi"]
+[ext_resource type="PackedScene" uid="uid://dmacm5dsd7tsp" path="res://Prefabs/hazards/Buraco.tscn" id="9_73gf5"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i20aj"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -252,9 +252,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl7jm"]
-size = Vector2(98, 104)
-
 [node name="Fase02" type="Node2D"]
 script = ExtResource("1_tjgwm")
 
@@ -301,15 +298,6 @@ collision_mask = 4
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0, 0, 0, 1)
-
-[node name="Hole01" type="Area2D" parent="."]
-position = Vector2(1903, 199)
-scale = Vector2(26.7015, 1.32)
-script = ExtResource("6_qy44o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole01"]
-scale = Vector2(1.68514, 1.48)
-shape = SubResource("RectangleShape2D_yl7jm")
 
 [node name="1way platform2" parent="." instance=ExtResource("7_tri1b")]
 visible = false
@@ -408,3 +396,7 @@ scale = Vector2(1, 1.12)
 [node name="Door2" parent="." instance=ExtResource("8_jo4wi")]
 position = Vector2(1608, -247)
 scale = Vector2(1, 1.12)
+
+[node name="Buraco" parent="." instance=ExtResource("9_73gf5")]
+position = Vector2(2460, 531)
+scale = Vector2(1000, 40)

@@ -16,4 +16,4 @@ func _on_hurtbox_body_entered(body):
 		
 		
 func _on_hole_01_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Cenas/game_over.tscn")

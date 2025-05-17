@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jlr65bpu2nr0"
-path="res://.godot/imported/playerwalk-Sheet.png-ef5f055d064dfc6859c3dc5f3390aec8.ctex"
+uid="uid://cvneut44m23dq"
+path="res://.godot/imported/Enemy01.png-6028e36b5a0e6d8832fe4e32486de10f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gus Assets/playerwalk-Sheet.png"
-dest_files=["res://.godot/imported/playerwalk-Sheet.png-ef5f055d064dfc6859c3dc5f3390aec8.ctex"]
+source_file="res://Assets/Enemies/Enemy01.png"
+dest_files=["res://.godot/imported/Enemy01.png-6028e36b5a0e6d8832fe4e32486de10f.ctex"]
 
 [params]
 

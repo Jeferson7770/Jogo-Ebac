@@ -48,3 +48,7 @@ func take_damage(amount: int):
 	
 		
 		
+
+
+func _on_limite_perseguição_body_entered(body: Node2D) -> void:
+	velocity.x = 0

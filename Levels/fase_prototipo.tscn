@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://caxgvecqwoy5m"]
+[gd_scene load_steps=11 format=3 uid="uid://caxgvecqwoy5m"]
 
 [ext_resource type="Script" uid="uid://dvyhgwgkfpbwa" path="res://Scripts/Controlers/fase.gd" id="1_6w0eb"]
 [ext_resource type="Texture2D" uid="uid://df0bn1ksb3n7c" path="res://Assets/Assets_Placeholder/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="2_lru5n"]
@@ -139,6 +139,12 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_2ke8r")
 sources/1 = SubResource("TileSetAtlasSource_os7g0")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w0eb"]
+size = Vector2(414, 363)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lru5n"]
+size = Vector2(494, 471)
+
 [node name="Word-01" type="Node2D"]
 script = ExtResource("1_6w0eb")
 
@@ -163,3 +169,20 @@ position = Vector2(163, 239)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="Fim do Nivel" type="Area2D" parent="."]
+position = Vector2(1155, 479)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fim do Nivel"]
+position = Vector2(142, -12)
+shape = SubResource("RectangleShape2D_6w0eb")
+
+[node name="Limite Perseguição" type="Area2D" parent="."]
+position = Vector2(1297, 468)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limite Perseguição"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_lru5n")
+
+[connection signal="body_entered" from="Fim do Nivel" to="player" method="_on_fim_do_nivel_body_entered"]
+[connection signal="body_entered" from="Limite Perseguição" to="Enemy" method="_on_limite_perseguição_body_entered"]

@@ -51,3 +51,12 @@ func _on_hurtbox_body_entered(body):
 func follow_camera(camera):
 	var camera_path = camera.get_path()
 	remote_transform.remote_path = camera_path
+
+#funcao em que o player entra na safe zone e indica o fim do level
+func _on_fim_do_nivel_body_entered(body: Node2D) -> void:
+	#tocar animação da cama == deletar sprite do player -> trocar o sprite da cama pela cama usada
+	
+	#esperar alguns segundos
+	
+	#transicionar para fase 2 == fadeout para uma tela preta com texto -> pedir input do jogador (mouse 1) - > ativar prox cena
+	pass

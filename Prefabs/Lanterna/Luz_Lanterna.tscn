@@ -1,26 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdfi73qvj1lxy"]
+[gd_scene load_steps=5 format=3 uid="uid://cdfi73qvj1lxy"]
 
 [ext_resource type="Texture2D" uid="uid://s8rbgty0ybj6" path="res://Assets/Lights/Light_Cone.png" id="1_b4kro"]
 [ext_resource type="Script" uid="uid://u7kn62gjve1f" path="res://Scripts/Lanterna/lookAtMouse.gd" id="1_xfd2m"]
 [ext_resource type="Script" uid="uid://c8wff4dn8wrug" path="res://Scripts/Lanterna/lantern.gd" id="2_bmowh"]
-[ext_resource type="Texture2D" uid="uid://djsnxbj727bof" path="res://icon.svg" id="2_s4eqj"]
 [ext_resource type="Texture2D" uid="uid://c6220lr2rbnhe" path="res://Assets/Gus Assets/lanterna-Sheet.png" id="3_6ay32"]
 
 [node name="Lanterna" type="Node2D"]
-
-[node name="background_editor" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-879, -789)
-scale = Vector2(25.4141, 17.2363)
-texture = ExtResource("2_s4eqj")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0, 0, 0, 1)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-zoom = Vector2(30, 30)
 
 [node name="Sprite_Lanterna" type="Sprite2D" parent="."]
 position = Vector2(2, 0)

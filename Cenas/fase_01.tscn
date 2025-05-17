@@ -387,6 +387,7 @@ shader_parameter/line_color_b = Color(0, 0, 0, 1)
 script = ExtResource("1_874vp")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Cenario" type="TileMapLayer" parent="."]

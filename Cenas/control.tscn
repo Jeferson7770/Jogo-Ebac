@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://e86lmo70nfay"]
+[gd_scene load_steps=7 format=3 uid="uid://e86lmo70nfay"]
 
 [ext_resource type="Script" uid="uid://kllfyyxrrjly" path="res://Scripts/Controlers/control.gd" id="1_crttf"]
+[ext_resource type="Texture2D" uid="uid://ddulnw1f258ot" path="res://Assets/Gus Assets/cor.png" id="2_40h0n"]
 [ext_resource type="Texture2D" uid="uid://d1s7as1giyoeu" path="res://Assets/Gus Assets/capa_copiar.jpg" id="2_crttf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_62e2m"]
 font_size = 64
 outline_size = 6
 outline_color = Color(1, 1, 0.596078, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y672a"]
+outline_size = 3
+outline_color = Color(0.839216, 0.513726, 0.0627451, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_crttf"]
 outline_size = 2
@@ -72,18 +77,52 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SAIR DO JOGO"
 
+[node name="Creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "CRÉDITOS"
+
+[node name="creditos" type="Sprite2D" parent="VBoxContainer/Creditos"]
+position = Vector2(113.5, -60)
+scale = Vector2(7.88356, 4.83582)
+texture = ExtResource("2_40h0n")
+
+[node name="Label" type="Label" parent="VBoxContainer/Creditos/creditos"]
+offset_left = -62.5986
+offset_top = -49.2161
+offset_right = 358.401
+offset_bottom = 103.784
+scale = Vector2(0.299809, 0.569877)
+text = "DESIGN, QA e BALANCEAMENTO - André Teixeira
+
+PROGRAMAÇÃO e IMPLEMENTAÇÃO - Jeferson Moreira
+
+ARTE - Gustavo Resende"
+label_settings = SubResource("LabelSettings_y672a")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="close" type="Button" parent="VBoxContainer/Creditos/creditos"]
+offset_left = -71.8584
+offset_top = -65.5525
+offset_right = -54.8584
+offset_bottom = -34.5525
+scale = Vector2(0.832563, 0.545062)
+text = "x"
+flat = true
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(576, 323.5)
 scale = Vector2(0.6, 0.59537)
 texture = ExtResource("2_crttf")
 
-[node name="Creditos" type="Label" parent="."]
-layout_mode = 0
-offset_left = 963.0
-offset_top = 532.0
-offset_right = 1139.0
-offset_bottom = 635.0
+[node name="Creditos" type="Label" parent="Sprite2D"]
+offset_left = 645.0
+offset_top = 350.202
+offset_right = 821.0
+offset_bottom = 453.202
 text = "Um jogo por:
 André Tavares
 Jeferson Moreira
@@ -93,3 +132,5 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos/creditos/close" to="." method="_on_close_pressed"]

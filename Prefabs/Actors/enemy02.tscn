@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dytolgulx5u7e"]
+[gd_scene load_steps=17 format=3 uid="uid://dytolgulx5u7e"]
 
 [ext_resource type="Script" uid="uid://c7mlp1dp4x2jp" path="res://Scripts/enemy.gd" id="1_ngbna"]
 [ext_resource type="Texture2D" uid="uid://dn5hbx6tqmbd1" path="res://Assets/Enemies/Enemy02_Idle.png" id="2_08ri4"]
 [ext_resource type="Texture2D" uid="uid://y0h33ybvjvlq" path="res://Assets/Enemies/Enemy02_Chasing.png" id="3_mxyi1"]
+[ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets/Lights/light.jpg" id="4_mxyi1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b6vxp"]
 radius = 9.0
@@ -105,6 +106,11 @@ position = Vector2(3, 5)
 sprite_frames = SubResource("SpriteFrames_jpbtr")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
+position = Vector2(-4, -23)
+scale = Vector2(0.0419444, 0.0319444)
+texture = ExtResource("4_mxyi1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

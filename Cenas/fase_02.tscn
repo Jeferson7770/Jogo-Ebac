@@ -264,7 +264,7 @@ tile_set = SubResource("TileSet_5jp4g")
 
 [node name="background" type="Sprite2D" parent="Cenario"]
 z_index = -7
-position = Vector2(4783, -52.9998)
+position = Vector2(4790, -25)
 scale = Vector2(89.5617, 63.7164)
 texture = ExtResource("3_73gf5")
 

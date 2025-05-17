@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://bj2y7dk627ocf"]
+[gd_scene load_steps=45 format=4 uid="uid://bj2y7dk627ocf"]
 
 [ext_resource type="Script" uid="uid://dvyhgwgkfpbwa" path="res://Scripts/Controlers/fase.gd" id="1_874vp"]
 [ext_resource type="Texture2D" uid="uid://cciwugd4ux0cf" path="res://Assets/tile-Sheet.png" id="1_obb1c"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c6mx8emxoosbh" path="res://Prefabs/Door.tscn" id="8_7k20q"]
 [ext_resource type="Texture2D" uid="uid://dl58toe0vq1vw" path="res://Assets/Gus Assets/Tutorial_anim.png" id="9_5jp4g"]
 [ext_resource type="PackedScene" uid="uid://dmacm5dsd7tsp" path="res://Prefabs/hazards/Buraco.tscn" id="10_4gm52"]
+[ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets/Lights/light.jpg" id="10_gupph"]
 [ext_resource type="PackedScene" uid="uid://y23bojg81drf" path="res://Prefabs/Actors/enemy.tscn" id="10_ryu3p"]
 [ext_resource type="PackedScene" uid="uid://dlhst8tgp2tct" path="res://Cenas/fim_level.tscn" id="11_cvbl2"]
 [ext_resource type="Script" uid="uid://2vvqbn6q0sku" path="res://Scripts/transition.gd" id="12_qcq4q"]
@@ -386,7 +387,6 @@ shader_parameter/line_color_b = Color(0, 0, 0, 1)
 script = ExtResource("1_874vp")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Cenario" type="TileMapLayer" parent="."]
@@ -422,7 +422,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="player" parent="." instance=ExtResource("3_oi6pe")]
-position = Vector2(4230, 743)
+position = Vector2(-246, 0)
 collision_layer = 5
 
 [node name="Enemy" parent="." instance=ExtResource("10_ryu3p")]
@@ -463,31 +463,55 @@ position = Vector2(-203, -77)
 sprite_frames = SubResource("SpriteFrames_x3fdl")
 autoplay = "default"
 
+[node name="PointLight2D" type="PointLight2D" parent="W sprite"]
+energy = 0.3
+texture = ExtResource("10_gupph")
+
 [node name="A Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-220, -62)
 sprite_frames = SubResource("SpriteFrames_7ku08")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="A Sprite"]
+energy = 0.3
+texture = ExtResource("10_gupph")
 
 [node name="S Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-202, -62)
 sprite_frames = SubResource("SpriteFrames_hxi71")
 autoplay = "default"
 
+[node name="PointLight2D" type="PointLight2D" parent="S Sprite"]
+energy = 0.3
+texture = ExtResource("10_gupph")
+
 [node name="D Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-183, -62)
 sprite_frames = SubResource("SpriteFrames_usq56")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="D Sprite"]
+energy = 0.3
+texture = ExtResource("10_gupph")
 
 [node name="Space Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-99, -68)
 sprite_frames = SubResource("SpriteFrames_twhrr")
 autoplay = "default"
 
+[node name="PointLight2D" type="PointLight2D" parent="Space Sprite"]
+energy = 0.5
+texture = ExtResource("10_gupph")
+
 [node name="Run_Sprite" type="Sprite2D" parent="."]
 position = Vector2(415, -57)
 texture = ExtResource("9_5jp4g")
 region_enabled = true
 region_rect = Rect2(64.2674, 17.4585, 25.9451, 8.10783)
+
+[node name="PointLight2D" type="PointLight2D" parent="Run_Sprite"]
+energy = 0.3
+texture = ExtResource("10_gupph")
 
 [node name="Jump Here_Sprite" type="Sprite2D" parent="."]
 position = Vector2(3837, 370)

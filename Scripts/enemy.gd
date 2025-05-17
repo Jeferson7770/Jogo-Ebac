@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Variáveis do inimigo
-@export var speed: float = 150
+@export var speed: float = 153
 @export var health: int = 100
 @export var stop_distance: float = 1
 @onready var player = null

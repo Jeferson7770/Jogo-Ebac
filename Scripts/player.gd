@@ -1,7 +1,7 @@
 extends CharacterBody2D
 # Constantes de velocidade
 const SPEED = 150.0
-const JUMP_FORCE = -300.0
+const JUMP_FORCE = -310.0
 var motion = Vector2()
 # Pega a gravidade do projeto
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

@@ -45,3 +45,5 @@ zoom = Vector2(30, 30)
 
 [connection signal="body_entered" from="Sprite_Lanterna/PointLight2D/Area2D" to="Sprite_Lanterna/PointLight2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Sprite_Lanterna/PointLight2D/Area2D" to="Sprite_Lanterna/PointLight2D" method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Sprite_Lanterna/PointLight2D/Area2D" to="Sprite_Lanterna" method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Sprite_Lanterna/PointLight2D/Area2D" to="Sprite_Lanterna" method="_on_area_2d_body_shape_exited"]

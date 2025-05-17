@@ -21,3 +21,13 @@ func _process(delta):
 	# Define a rotação do objeto para o ângulo calculado.
 	# A propriedade rotation em Node2D espera um ângulo em radianos.
 	rotation = angle
+
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body.is_in_group("Enemy"):
+		body.set_paralyzed(true)
+
+
+func _on_area_2d_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body.is_in_group("Enemy"):
+		body.set_paralyzed(false)

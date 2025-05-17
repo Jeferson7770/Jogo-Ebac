@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dytolgulx5u7e"]
+[gd_scene load_steps=16 format=3 uid="uid://dytolgulx5u7e"]
 
 [ext_resource type="Script" uid="uid://c7mlp1dp4x2jp" path="res://Scripts/enemy.gd" id="1_ngbna"]
 [ext_resource type="Texture2D" uid="uid://dn5hbx6tqmbd1" path="res://Assets/Enemies/Enemy02_Idle.png" id="2_08ri4"]
@@ -23,10 +23,6 @@ region = Rect2(288, 0, 144, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_n3oog"]
 atlas = ExtResource("2_08ri4")
 region = Rect2(432, 0, 144, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8qhm3"]
-atlas = ExtResource("2_08ri4")
-region = Rect2(576, 0, 144, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ss2q"]
 atlas = ExtResource("3_mxyi1")
@@ -66,9 +62,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n3oog")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8qhm3")
 }],
 "loop": true,
 "name": &"idle",
@@ -110,7 +103,7 @@ shape = SubResource("CapsuleShape2D_b6vxp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, 5)
 sprite_frames = SubResource("SpriteFrames_jpbtr")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -118,5 +111,6 @@ autoplay = "idle"
 [node name="Gun" type="Node2D" parent="."]
 
 [node name="Wall_detector" type="RayCast2D" parent="."]
-position = Vector2(4, -3)
-target_position = Vector2(12, 2)
+position = Vector2(-8, -8)
+scale = Vector2(1, 7.84)
+target_position = Vector2(14, 2.04082)

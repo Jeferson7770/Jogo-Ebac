@@ -2,32 +2,34 @@
 
 [ext_resource type="Texture2D" uid="uid://si1sxk7rh3op" path="res://Assets/Gus Assets/cristal-Sheet.png" id="1_efj5c"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5eb8j"]
-radius = 11.0454
+[sub_resource type="CircleShape2D" id="CircleShape2D_efj5c"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7h8js"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eb8j"]
 atlas = ExtResource("1_efj5c")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dyfge"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h8js"]
 atlas = ExtResource("1_efj5c")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1byam"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyfge"]
 atlas = ExtResource("1_efj5c")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4euj7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1byam"]
 atlas = ExtResource("1_efj5c")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sdwoh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4euj7"]
 atlas = ExtResource("1_efj5c")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_g5111"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_sdwoh"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eb8j")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7h8js")
 }, {
@@ -39,19 +41,20 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4euj7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sdwoh")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Shine" type="Area2D"]
+[node name="Node2D" type="Node2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_5eb8j")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_efj5c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_g5111")
+sprite_frames = SubResource("SpriteFrames_sdwoh")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

@@ -24,6 +24,8 @@ offset = Vector2(417.03, -7.705)
 script = ExtResource("2_bmowh")
 
 [node name="Area2D" type="Area2D" parent="Sprite_Lanterna/PointLight2D"]
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite_Lanterna/PointLight2D/Area2D"]
 polygon = PackedVector2Array(20.3043, -27.1628, 710.652, -258.047, 730.956, -258.047, 751.261, -244.465, 771.565, -217.302, 791.869, -190.14, 802.021, -149.395, 812.174, -95.0698, 822.326, -40.7442, 822.326, 27.1628, 812.174, 95.0698, 802.021, 135.814, 791.869, 162.977, 771.565, 203.721, 761.413, 217.302, 741.108, 230.884, 720.804, 244.465, 20.3043, 27.1628, 0, 0)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://y23bojg81drf"]
+[gd_scene load_steps=19 format=3 uid="uid://y23bojg81drf"]
 
 [ext_resource type="Script" uid="uid://c7mlp1dp4x2jp" path="res://Scripts/enemy.gd" id="1_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://cvneut44m23dq" path="res://Assets/Enemies/Enemy01.png" id="2_qa73o"]
+[ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets/Lights/light.jpg" id="3_dgb40"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgb40"]
 radius = 15.998
@@ -126,11 +127,18 @@ sprite_frames = SubResource("SpriteFrames_jpbtr")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
+position = Vector2(50, -8)
+scale = Vector2(0.0700001, 0.0866667)
+energy = 1.1
+texture = ExtResource("3_dgb40")
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="Gun" type="Node2D" parent="."]
 
 [node name="Wall_detector" type="RayCast2D" parent="."]
 z_index = 2
-position = Vector2(37, -13)
-target_position = Vector2(12, 2)
+position = Vector2(-40, -5)
+scale = Vector2(3.74925, 1)
+target_position = Vector2(21.871, 6)

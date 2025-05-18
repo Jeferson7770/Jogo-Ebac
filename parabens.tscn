@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmiig0jjgw5v5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y0px1"]
+font_size = 45
+
+[node name="Parabens" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1147.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 100.0
+offset_right = 943.0
+offset_bottom = 551.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 171.0
+offset_right = 1116.0
+offset_bottom = 481.0
+text = "Você venceu o jogo , mas a jornada continua . 
+As conquistas ficam , e novos desafios surgem
+ fora da tela.  A aventura não termina aqui ela
+ apenas se transforma. 
+
+                                   Obrigado!"
+label_settings = SubResource("LabelSettings_y0px1")
+justification_flags = 170

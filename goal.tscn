@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck43jw43rm02o"]
+
+[ext_resource type="Script" uid="uid://bewtptftj7gk8" path="res://Scripts/goal.gd" id="1_0qle8"]
+[ext_resource type="Texture2D" uid="uid://6ovpcxpambty" path="res://Assets/Assets_Placeholder/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="1_6k3qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qle8"]
+size = Vector2(111, 70)
+
+[sub_resource type="Animation" id="Animation_p20yd"]
+resource_name = "float"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20)]
+}
+
+[sub_resource type="Animation" id="Animation_gcynx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_la2f0"]
+_data = {
+&"RESET": SubResource("Animation_gcynx"),
+&"float": SubResource("Animation_p20yd")
+}
+
+[node name="goal" type="Area2D"]
+script = ExtResource("1_0qle8")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_6k3qi")
+region_enabled = true
+region_rect = Rect2(16, 48, 32, 32)
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -13)
+shape = SubResource("RectangleShape2D_0qle8")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_la2f0")
+}
+autoplay = "float"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

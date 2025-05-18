@@ -57,4 +57,4 @@ func set_paralyzed(state: bool):
 
 
 func _on_limite_perseguição_body_entered(body: Node2D) -> void:
-	velocity.x = 0
+	is_paralyzed = true

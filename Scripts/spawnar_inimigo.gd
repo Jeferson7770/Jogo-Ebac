@@ -18,11 +18,6 @@ func _ready():
 		printerr("ZonaDeAtivacao '%s': O inimigo alvo '%s' NÃO POSSUI o método 'set_paralyzed(bool)'." % [name, inimigo_alvo.name])
 		inimigo_alvo = null # Invalida o alvo para evitar erros futuros
 	else:
-		# Como o inimigo já deve começar paralisado pelo seu próprio script,
-		# não é estritamente necessário chamarmos set_paralyzed(true) daqui.
-		# Mas se quisesse garantir 100% pela zona:
-		# inimigo_alvo.call("set_paralyzed", true)
-		# print("ZonaDeAtivacao '%s': Garantindo que '%s' comece paralisado." % [name, inimigo_alvo.name])
 		pass
 
 	self.body_entered.connect(_on_body_entered)
@@ -42,10 +37,3 @@ func _on_body_entered(body: Node2D):
 			inimigo_alvo.call("set_paralyzed", false) # Chama o método para desparalisar
 			
 			ja_ativou = true # Marca que este gatilho já foi usado
-
-			# Opcional: Desabilitar esta Area2D para performance ou para não re-detectar
-			# monitoring = false
-			# get_node("CollisionShape2D").set_deferred("disabled", true) # Boa prática usar set_deferred
-			# queue_free() # Remove completamente a zona de ativação da cena
-		# else: # Este else não deve ser alcançado se a verificação em _ready invalidou inimigo_alvo
-			# printerr("ZonaDeAtivacao '%s': Falha ao tentar ativar. Inimigo '%s' não tem o método 'set_paralyzed'." % [name, inimigo_alvo.name])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck43jw43rm02o"]
+[gd_scene load_steps=8 format=3 uid="uid://ck43jw43rm02o"]
 
 [ext_resource type="Script" uid="uid://bewtptftj7gk8" path="res://Scripts/goal.gd" id="1_0qle8"]
 [ext_resource type="Texture2D" uid="uid://c035ab0dqb40" path="res://Assets/Gus Assets/cama-Sheet.png" id="2_0qle8"]
@@ -20,6 +20,54 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SceneTransition/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SceneTransition/ColorRect/RichTextLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SceneTransition/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SceneTransition/ColorRect/RichTextLabel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_p20yd"]
 resource_name = "float"
@@ -38,9 +86,62 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -20)]
 }
 
+[sub_resource type="Animation" id="Animation_0qle8"]
+resource_name = "animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SceneTransition/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SceneTransition/ColorRect/RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SceneTransition/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SceneTransition/ColorRect/RichTextLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_la2f0"]
 _data = {
 &"RESET": SubResource("Animation_gcynx"),
+&"animation": SubResource("Animation_0qle8"),
 &"float": SubResource("Animation_p20yd")
 }
 
@@ -62,5 +163,40 @@ libraries = {
 &"": SubResource("AnimationLibrary_la2f0")
 }
 autoplay = "float"
+
+[node name="SceneTransition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="SceneTransition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SceneTransition/ColorRect"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ele está aqui de novo….
+
+ninguém veio ajudar, tive que fugir pra acender as luzes
+
+eles devem estar ocupados de novo
+
+to com saudades
+
+Lilly"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

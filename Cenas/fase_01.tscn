@@ -1,8 +1,7 @@
-[gd_scene load_steps=38 format=4 uid="uid://bj2y7dk627ocf"]
+[gd_scene load_steps=34 format=4 uid="uid://bj2y7dk627ocf"]
 
 [ext_resource type="Script" uid="uid://dvyhgwgkfpbwa" path="res://Scripts/Controlers/fase.gd" id="1_874vp"]
 [ext_resource type="Texture2D" uid="uid://cciwugd4ux0cf" path="res://Assets/tile-Sheet.png" id="1_obb1c"]
-[ext_resource type="Texture2D" uid="uid://si1sxk7rh3op" path="res://Assets/Gus Assets/cristal-Sheet.png" id="2_yl7jm"]
 [ext_resource type="Texture2D" uid="uid://ddulnw1f258ot" path="res://Assets/Gus Assets/cor.png" id="3_874vp"]
 [ext_resource type="PackedScene" uid="uid://7t38i72ygtkk" path="res://Prefabs/Actors/player.tscn" id="3_oi6pe"]
 [ext_resource type="PackedScene" uid="uid://ck43jw43rm02o" path="res://goal.tscn" id="5_gupph"]
@@ -11,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dl58toe0vq1vw" path="res://Assets/Gus Assets/Tutorial_anim.png" id="9_5jp4g"]
 [ext_resource type="PackedScene" uid="uid://dmacm5dsd7tsp" path="res://Prefabs/hazards/Buraco.tscn" id="10_4gm52"]
 [ext_resource type="PackedScene" uid="uid://y23bojg81drf" path="res://Prefabs/Actors/enemy.tscn" id="10_ryu3p"]
+[ext_resource type="PackedScene" uid="uid://b5jt0iciychm1" path="res://Prefabs/shine.tscn" id="12_cpkws"]
+[ext_resource type="Script" uid="uid://cp5tabnofdwoj" path="res://Scripts/spawnar_inimigo.gd" id="12_cvbl2"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i20aj"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -53,11 +54,8 @@ texture = ExtResource("1_obb1c")
 15:2/0 = 0
 16:2/0 = 0
 17:2/0 = 0
-17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:2/0 = 0
-18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:2/0 = 0
-19:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:3/0 = 0
 2:3/0 = 0
 3:3/0 = 0
@@ -72,11 +70,8 @@ texture = ExtResource("1_obb1c")
 12:3/0 = 0
 14:3/0 = 0
 15:3/0 = 0
-15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:3/0 = 0
-16:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:3/0 = 0
-17:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:3/0 = 0
 18:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_7k20q")
 19:3/0 = 0
@@ -211,49 +206,6 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7k20q")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ryu3p"]
-atlas = ExtResource("2_yl7jm")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gm52"]
-atlas = ExtResource("2_yl7jm")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cpkws"]
-atlas = ExtResource("2_yl7jm")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvbl2"]
-atlas = ExtResource("2_yl7jm")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qcq4q"]
-atlas = ExtResource("2_yl7jm")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qxgbn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ryu3p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4gm52")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cpkws")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cvbl2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qcq4q")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxgbn"]
 atlas = ExtResource("9_5jp4g")
 region = Rect2(0, 16, 16, 16)
@@ -364,11 +316,13 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcq4q"]
+size = Vector2(112, 288)
+
 [node name="Fase01" type="Node2D"]
 script = ExtResource("1_874vp")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Cenario" type="TileMapLayer" parent="."]
@@ -380,18 +334,6 @@ z_index = -7
 position = Vector2(4882, -29)
 scale = Vector2(89.5617, 63.7164)
 texture = ExtResource("3_874vp")
-
-[node name="Shine" type="AnimatedSprite2D" parent="."]
-position = Vector2(56, -151)
-scale = Vector2(0.625, 0.6875)
-sprite_frames = SubResource("SpriteFrames_qxgbn")
-autoplay = "default"
-
-[node name="Shine2" type="AnimatedSprite2D" parent="."]
-position = Vector2(2296, -40)
-scale = Vector2(0.625, 0.6875)
-sprite_frames = SubResource("SpriteFrames_qxgbn")
-autoplay = "default"
 
 [node name="camera" type="Camera2D" parent="."]
 z_index = 5
@@ -407,10 +349,11 @@ position_smoothing_enabled = true
 position = Vector2(4544, 760)
 
 [node name="player" parent="." instance=ExtResource("3_oi6pe")]
-position = Vector2(2353, 34)
+position = Vector2(-243, -1)
 collision_layer = 5
 
 [node name="Enemy" parent="." instance=ExtResource("10_ryu3p")]
+z_index = 1
 position = Vector2(-178, -437)
 collision_layer = 4
 collision_mask = 4
@@ -444,27 +387,27 @@ position = Vector2(2536, 56)
 scale = Vector2(1, 1.08)
 
 [node name="W sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-203, -77)
+position = Vector2(-176, -85)
 sprite_frames = SubResource("SpriteFrames_x3fdl")
 autoplay = "default"
 
 [node name="A Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-220, -62)
+position = Vector2(-193, -70)
 sprite_frames = SubResource("SpriteFrames_7ku08")
 autoplay = "default"
 
 [node name="S Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-202, -62)
+position = Vector2(-175, -70)
 sprite_frames = SubResource("SpriteFrames_hxi71")
 autoplay = "default"
 
 [node name="D Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-183, -62)
+position = Vector2(-156, -70)
 sprite_frames = SubResource("SpriteFrames_usq56")
 autoplay = "default"
 
 [node name="Space Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-99, -68)
+position = Vector2(-175, -48)
 sprite_frames = SubResource("SpriteFrames_twhrr")
 autoplay = "default"
 
@@ -485,10 +428,6 @@ region_rect = Rect2(63.9978, 7.81048, 27.6477, 9.06726)
 position = Vector2(1256, 98)
 scale = Vector2(4.04, 2.76)
 
-[node name="Buraco4" parent="." instance=ExtResource("10_4gm52")]
-position = Vector2(499, -0.999992)
-scale = Vector2(4.04, 2.76)
-
 [node name="Buraco2" parent="." instance=ExtResource("10_4gm52")]
 position = Vector2(1670, -84)
 scale = Vector2(4.72, 2.76)
@@ -496,3 +435,20 @@ scale = Vector2(4.72, 2.76)
 [node name="Buraco3" parent="." instance=ExtResource("10_4gm52")]
 position = Vector2(3083, 918)
 scale = Vector2(86.2579, -11.6234)
+
+[node name="Shine3" parent="." instance=ExtResource("12_cpkws")]
+position = Vector2(2295, -35)
+no_porta_associada = NodePath("../Door2")
+
+[node name="Shine" parent="." instance=ExtResource("12_cpkws")]
+position = Vector2(56, -148)
+no_porta_associada = NodePath("../Door")
+
+[node name="Spawnar Inimigo" type="Area2D" parent="."]
+position = Vector2(280, -130)
+script = ExtResource("12_cvbl2")
+no_inimigo_para_ativar = NodePath("../Enemy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawnar Inimigo"]
+position = Vector2(-46, 12)
+shape = SubResource("RectangleShape2D_qcq4q")

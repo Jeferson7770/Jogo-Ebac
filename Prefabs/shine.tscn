@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5jt0iciychm1"]
+[gd_scene load_steps=10 format=3 uid="uid://b5jt0iciychm1"]
 
+[ext_resource type="Script" uid="uid://buk8b32qx4dq5" path="res://Scripts/shine.gd" id="1_5eb8j"]
 [ext_resource type="Texture2D" uid="uid://si1sxk7rh3op" path="res://Assets/Gus Assets/cristal-Sheet.png" id="1_efj5c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eb8j"]
@@ -47,7 +48,8 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efj5c"]
 
-[node name="Node2D" type="Area2D"]
+[node name="Node2D" type="StaticBody2D" groups=["cristais_interativos"]]
+script = ExtResource("1_5eb8j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sdwoh")

@@ -1,15 +1,16 @@
-[gd_scene load_steps=22 format=4 uid="uid://bloalwhhhgmae"]
+[gd_scene load_steps=18 format=4 uid="uid://bloalwhhhgmae"]
 
 [ext_resource type="Script" uid="uid://dvyhgwgkfpbwa" path="res://Scripts/Controlers/fase.gd" id="1_tjgwm"]
 [ext_resource type="Texture2D" uid="uid://cciwugd4ux0cf" path="res://Assets/tile-Sheet.png" id="2_jo4wi"]
 [ext_resource type="Texture2D" uid="uid://ddulnw1f258ot" path="res://Assets/Gus Assets/cor.png" id="3_73gf5"]
-[ext_resource type="Texture2D" uid="uid://si1sxk7rh3op" path="res://Assets/Gus Assets/cristal-Sheet.png" id="4_88rbq"]
 [ext_resource type="PackedScene" uid="uid://upxdu08or6lf" path="res://Prefabs/goal_2.tscn" id="5_88rbq"]
 [ext_resource type="PackedScene" uid="uid://7t38i72ygtkk" path="res://Prefabs/Actors/player.tscn" id="5_jor72"]
 [ext_resource type="PackedScene" uid="uid://dytolgulx5u7e" path="res://Prefabs/Actors/enemy02.tscn" id="6_73gf5"]
 [ext_resource type="PackedScene" uid="uid://cgvcxrgs6cp0d" path="res://Prefabs/1way platform.tscn" id="7_tri1b"]
 [ext_resource type="PackedScene" uid="uid://c6mx8emxoosbh" path="res://Prefabs/Door.tscn" id="8_jo4wi"]
 [ext_resource type="PackedScene" uid="uid://dmacm5dsd7tsp" path="res://Prefabs/hazards/Buraco.tscn" id="9_73gf5"]
+[ext_resource type="PackedScene" uid="uid://b5jt0iciychm1" path="res://Prefabs/shine.tscn" id="10_88rbq"]
+[ext_resource type="Script" uid="uid://cp5tabnofdwoj" path="res://Scripts/spawnar_inimigo.gd" id="11_jor72"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i20aj"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -210,48 +211,8 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7k20q")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ryu3p"]
-atlas = ExtResource("4_88rbq")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gm52"]
-atlas = ExtResource("4_88rbq")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cpkws"]
-atlas = ExtResource("4_88rbq")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvbl2"]
-atlas = ExtResource("4_88rbq")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qcq4q"]
-atlas = ExtResource("4_88rbq")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qxgbn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ryu3p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4gm52")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cpkws")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cvbl2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qcq4q")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy44o"]
+size = Vector2(112, 288)
 
 [node name="Fase02" type="Node2D"]
 script = ExtResource("1_tjgwm")
@@ -265,18 +226,6 @@ z_index = -7
 position = Vector2(4790, -25)
 scale = Vector2(89.5617, 63.7164)
 texture = ExtResource("3_73gf5")
-
-[node name="Shine" type="AnimatedSprite2D" parent="."]
-position = Vector2(968, -100)
-scale = Vector2(0.62, 0.682)
-sprite_frames = SubResource("SpriteFrames_qxgbn")
-autoplay = "default"
-
-[node name="Shine2" type="AnimatedSprite2D" parent="."]
-position = Vector2(1360, -247)
-scale = Vector2(0.62, 0.62)
-sprite_frames = SubResource("SpriteFrames_qxgbn")
-autoplay = "default"
 
 [node name="camera" type="Camera2D" parent="."]
 z_index = 5
@@ -300,7 +249,6 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="1way platform2" parent="." instance=ExtResource("7_tri1b")]
@@ -404,3 +352,20 @@ scale = Vector2(1, 1.12)
 [node name="Buraco" parent="." instance=ExtResource("9_73gf5")]
 position = Vector2(2460, 531)
 scale = Vector2(1000, 40)
+
+[node name="Shine1" parent="." instance=ExtResource("10_88rbq")]
+position = Vector2(967, -99)
+no_porta_associada = NodePath("../Door")
+
+[node name="Shine2" parent="." instance=ExtResource("10_88rbq")]
+position = Vector2(1361, -241)
+no_porta_associada = NodePath("../Door2")
+
+[node name="Spawnar Inimigo" type="Area2D" parent="."]
+position = Vector2(-75, -123)
+script = ExtResource("11_jor72")
+no_inimigo_para_ativar = NodePath("../Enemy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawnar Inimigo"]
+position = Vector2(-46, 12)
+shape = SubResource("RectangleShape2D_qy44o")

@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var wall_detector := $Wall_detector as RayCast2D
 
 # Nova variável pra controle de paralisia
-var is_paralyzed: bool = false
+var is_paralyzed: bool = true
 
 func _ready():
 	player = get_parent().get_node("player")

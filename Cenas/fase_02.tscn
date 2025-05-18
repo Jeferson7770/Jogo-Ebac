@@ -292,7 +292,7 @@ position_smoothing_enabled = true
 position = Vector2(3837, -77)
 
 [node name="player" parent="." instance=ExtResource("5_jor72")]
-position = Vector2(-282, -28)
+position = Vector2(-215, -1)
 
 [node name="Enemy" parent="." instance=ExtResource("6_73gf5")]
 position = Vector2(-456, -242)

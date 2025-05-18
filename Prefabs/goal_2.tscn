@@ -1,7 +1,22 @@
 [gd_scene load_steps=7 format=3 uid="uid://upxdu08or6lf"]
 
 [ext_resource type="Script" uid="uid://cf0tnw01ylr0" path="res://Scripts/goal_2.gd" id="1_psduc"]
-[ext_resource type="Texture2D" uid="uid://6ovpcxpambty" path="res://Assets/Assets_Placeholder/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_ssb66"]
+[ext_resource type="Texture2D" uid="uid://c035ab0dqb40" path="res://Assets/Gus Assets/cama-Sheet.png" id="2_psduc"]
+
+[sub_resource type="Animation" id="Animation_ys2nt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_fulxj"]
 resource_name = "float"
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -20)]
 }
 
-[sub_resource type="Animation" id="Animation_ys2nt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hnki6"]
 _data = {
 &"RESET": SubResource("Animation_ys2nt"),
@@ -48,9 +48,10 @@ size = Vector2(80, 65)
 script = ExtResource("1_psduc")
 
 [node name="sprit" type="Sprite2D" parent="."]
-texture = ExtResource("2_ssb66")
+texture = ExtResource("2_psduc")
+flip_h = true
 region_enabled = true
-region_rect = Rect2(16, 48, 32, 32)
+region_rect = Rect2(0.990547, 14.8885, 29.1378, 17.0563)
 
 [node name="anim" type="AnimationPlayer" parent="sprit"]
 libraries = {

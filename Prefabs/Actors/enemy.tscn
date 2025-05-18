@@ -139,6 +139,6 @@ texture = ExtResource("3_dgb40")
 
 [node name="Wall_detector" type="RayCast2D" parent="."]
 z_index = 2
-position = Vector2(-40, -5)
-scale = Vector2(3.74925, 1)
-target_position = Vector2(21.871, 6)
+position = Vector2(-43, -6)
+scale = Vector2(3.74925, 2.8)
+target_position = Vector2(23.7381, 2.85714)

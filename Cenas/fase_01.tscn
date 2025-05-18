@@ -404,10 +404,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="goal" parent="." instance=ExtResource("5_gupph")]
-position = Vector2(4545, 741)
+position = Vector2(4544, 760)
 
 [node name="player" parent="." instance=ExtResource("3_oi6pe")]
-position = Vector2(4230, 743)
+position = Vector2(2353, 34)
 collision_layer = 5
 
 [node name="Enemy" parent="." instance=ExtResource("10_ryu3p")]

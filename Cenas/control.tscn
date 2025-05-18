@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://e86lmo70nfay"]
+[gd_scene load_steps=8 format=3 uid="uid://e86lmo70nfay"]
 
 [ext_resource type="Script" uid="uid://kllfyyxrrjly" path="res://Scripts/Controlers/control.gd" id="1_crttf"]
 [ext_resource type="Texture2D" uid="uid://ddulnw1f258ot" path="res://Assets/Gus Assets/cor.png" id="2_40h0n"]
 [ext_resource type="Texture2D" uid="uid://d1s7as1giyoeu" path="res://Assets/Gus Assets/capa_copiar.jpg" id="2_crttf"]
+[ext_resource type="Texture2D" uid="uid://csrninab7vel2" path="res://Assets/Gus Assets/Sprite-0004-Sheet-Sheet.png" id="2_y672a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_62e2m"]
 font_size = 64
@@ -59,10 +60,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -44.0
-offset_right = 97.0
-offset_bottom = 76.0
+offset_left = 93.0
+offset_top = -50.0
+offset_right = 305.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -72,10 +73,24 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "INICIAR JOGO"
 
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Start"]
+position = Vector2(105.5, 25)
+scale = Vector2(0.437858, 0.349514)
+texture = ExtResource("2_y672a")
+region_enabled = true
+region_rect = Rect2(8.32013, 21.4701, 523.93, 206.91)
+
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SAIR DO JOGO"
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Exit"]
+position = Vector2(105, 27)
+scale = Vector2(0.412331, 0.361809)
+texture = ExtResource("2_y672a")
+region_enabled = true
+region_rect = Rect2(9.50006, 442.5, 519.2, 199.1)
 
 [node name="Creditos" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -83,6 +98,7 @@ theme_override_font_sizes/font_size = 30
 text = "CRÉDITOS"
 
 [node name="creditos" type="Sprite2D" parent="VBoxContainer/Creditos"]
+visible = false
 position = Vector2(113.5, -60)
 scale = Vector2(7.88356, 4.83582)
 texture = ExtResource("2_40h0n")
@@ -123,6 +139,7 @@ offset_left = 645.0
 offset_top = 350.202
 offset_right = 821.0
 offset_bottom = 453.202
+scale = Vector2(1.66665, 1.53748)
 text = "Um jogo por:
 André Tavares
 Jeferson Moreira

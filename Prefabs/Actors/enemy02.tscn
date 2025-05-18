@@ -117,6 +117,6 @@ texture = ExtResource("4_mxyi1")
 [node name="Gun" type="Node2D" parent="."]
 
 [node name="Wall_detector" type="RayCast2D" parent="."]
-position = Vector2(-8, -8)
-scale = Vector2(1, 7.84)
-target_position = Vector2(14, 2.04082)
+position = Vector2(-10, -9)
+scale = Vector2(1, 9.64)
+target_position = Vector2(17, 2.04082)

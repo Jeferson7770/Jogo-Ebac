@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://7t38i72ygtkk"]
+[gd_scene load_steps=13 format=3 uid="uid://7t38i72ygtkk"]
 
 [ext_resource type="Script" uid="uid://cxx8vh24x2qjm" path="res://Scripts/player.gd" id="1_mvpqy"]
 [ext_resource type="Texture2D" uid="uid://jlr65bpu2nr0" path="res://Assets/Player/playerwalk-Sheet.png" id="4_rrlj6"]
+[ext_resource type="PackedScene" uid="uid://bk4rjg45kuvjx" path="res://Audio/footsteps.tscn" id="5_gw0hm"]
 [ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets/Lights/light.jpg" id="5_kjkj0"]
 [ext_resource type="PackedScene" uid="uid://cdfi73qvj1lxy" path="res://Prefabs/Lanterna/Luz_Lanterna.tscn" id="6_rrlj6"]
 
@@ -69,7 +70,7 @@ shape = SubResource("RectangleShape2D_p3564")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 6)
 sprite_frames = SubResource("SpriteFrames_qcukj")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="animator" type="AnimationPlayer" parent="."]
@@ -93,5 +94,8 @@ position = Vector2(-2, 9)
 
 [node name="remote" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("..")
+
+[node name="Footsteps" parent="." instance=ExtResource("5_gw0hm")]
+bus = &"SFX"
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

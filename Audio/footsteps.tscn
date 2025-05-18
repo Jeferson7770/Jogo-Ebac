@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk4rjg45kuvjx"]
+
+[ext_resource type="Script" uid="uid://c2xqd8km47md0" path="res://Scripts/SFX_footsteps.gd" id="1_5pyto"]
+[ext_resource type="AudioStream" uid="uid://bj1ax8dx1pkyj" path="res://Assets/Assets_andre/Footsteps/footstep_03.wav" id="1_fjdns"]
+
+[node name="Footsteps" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_fjdns")
+script = ExtResource("1_5pyto")

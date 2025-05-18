@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://caxgvecqwoy5m"]
+[gd_scene load_steps=9 format=3 uid="uid://biwujwv7m7fan"]
 
 [ext_resource type="Script" uid="uid://dvyhgwgkfpbwa" path="res://Scripts/Controlers/fase.gd" id="1_6w0eb"]
-[ext_resource type="Texture2D" uid="uid://df0bn1ksb3n7c" path="res://Assets/Assets_Placeholder/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="2_lru5n"]
-[ext_resource type="Texture2D" uid="uid://cra5yoqavfqc2" path="res://Assets/Assets_Placeholder/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="3_1nted"]
 [ext_resource type="PackedScene" uid="uid://y23bojg81drf" path="res://Prefabs/Actors/enemy.tscn" id="4_t1p6r"]
 [ext_resource type="PackedScene" uid="uid://7t38i72ygtkk" path="res://Prefabs/Actors/player.tscn" id="5_i2lkd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ke8r"]
-texture = ExtResource("2_lru5n")
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
@@ -84,7 +81,6 @@ texture = ExtResource("2_lru5n")
 4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_os7g0"]
-texture = ExtResource("3_1nted")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0

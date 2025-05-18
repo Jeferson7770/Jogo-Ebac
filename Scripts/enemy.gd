@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
 # Variáveis do inimigo
-@export var speed: float = 165
+@export var speed: float = 168
 @export var health: int = 100
 @export var stop_distance: float = 1
 @onready var player = null
 @onready var wall_detector := $Wall_detector as RayCast2D
+@onready var footstep_sound_player: AudioStreamPlayer2D = $Sound
 
 # Nova variável pra controle de paralisia
 var is_paralyzed: bool = true
@@ -29,6 +30,14 @@ func _physics_process(delta):
 				flip(direction)
 			else:
 				velocity = Vector2.ZERO
+	if footstep_sound_player != null:
+		if !is_paralyzed:
+			if not footstep_sound_player.is_playing():
+				footstep_sound_player.play() # Toca o som em loop
+		else: # Não está se movendo ativamente (paralisado, parado, ou sem jogador)
+			if footstep_sound_player.is_playing():
+				footstep_sound_player.stop() # Para o som
+
 
 	# Move o inimigo
 	move_and_slide()

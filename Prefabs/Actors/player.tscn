@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://7t38i72ygtkk"]
+[gd_scene load_steps=13 format=3 uid="uid://7t38i72ygtkk"]
 
 [ext_resource type="Script" uid="uid://cxx8vh24x2qjm" path="res://Scripts/player.gd" id="1_mvpqy"]
 [ext_resource type="Texture2D" uid="uid://jlr65bpu2nr0" path="res://Assets/Player/playerwalk-Sheet.png" id="4_rrlj6"]
+[ext_resource type="AudioStream" uid="uid://d2iax4rp11l4f" path="res://Assets/Assets_andre/Brachys Assets/brackeys_platformer_assets/sounds/jump.wav" id="5_gw0hm"]
 [ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets/Lights/light.jpg" id="5_kjkj0"]
 [ext_resource type="PackedScene" uid="uid://cdfi73qvj1lxy" path="res://Prefabs/Lanterna/Luz_Lanterna.tscn" id="6_rrlj6"]
 
@@ -84,8 +85,7 @@ shape = SubResource("RectangleShape2D_esgq3")
 debug_color = Color(0.992104, 0, 0.256641, 0.42)
 
 [node name="test_local_light" type="PointLight2D" parent="."]
-visible = false
-energy = 0.1
+energy = 0.2
 texture = ExtResource("5_kjkj0")
 
 [node name="Lanterna" parent="." instance=ExtResource("6_rrlj6")]
@@ -93,5 +93,9 @@ position = Vector2(-2, 9)
 
 [node name="remote" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("..")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gw0hm")
+bus = &"SFX_Player"
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

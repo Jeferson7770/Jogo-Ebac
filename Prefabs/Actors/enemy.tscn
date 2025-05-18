@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://y23bojg81drf"]
+[gd_scene load_steps=20 format=3 uid="uid://y23bojg81drf"]
 
 [ext_resource type="Script" uid="uid://c7mlp1dp4x2jp" path="res://Scripts/enemy.gd" id="1_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://cvneut44m23dq" path="res://Assets/Enemies/Enemy01.png" id="2_qa73o"]
 [ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets/Lights/light.jpg" id="3_dgb40"]
+[ext_resource type="AudioStream" uid="uid://jiu1hef4unms" path="res://Assets/Assets_andre/Brachys Assets/brackeys_platformer_assets/sounds/hurt.wav" id="4_rs2v7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgb40"]
 radius = 15.998
@@ -142,3 +143,6 @@ z_index = 2
 position = Vector2(-43, -6)
 scale = Vector2(3.74925, 2.8)
 target_position = Vector2(23.7381, 2.85714)
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rs2v7")

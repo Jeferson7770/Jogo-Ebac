@@ -7,6 +7,8 @@ var motion = Vector2()
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 @onready var remote_transform := $remote as RemoteTransform2D
+@onready var footstep_sound_player: AudioStreamPlayer2D = $Footsteps
+
 func _physics_process(delta):
 	# Aplica gravidade se não estiver no chão
 	if not is_on_floor():
@@ -37,6 +39,17 @@ func _physics_process(delta):
 	else:
 		# Faz a velocidade horizontal ir suavemente para 0 quando não estiver pressionando nada
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if footstep_sound_player != null:
+		# Condições para o som de passos tocar: no chão E se movendo horizontalmente
+		var deve_tocar_passos = is_on_floor() and direction != 0
+		
+		if deve_tocar_passos:
+			if not footstep_sound_player.is_playing():
+				footstep_sound_player.play() # Inicia o som (que deve estar em loop)
+		else: # Não deve tocar (no ar OU parado no chão)
+			if footstep_sound_player.is_playing():
+				footstep_sound_player.stop() # Para o som
+
 		$anim.play("idle")
 
 	# Move o personagem de acordo com a velocidade calculada

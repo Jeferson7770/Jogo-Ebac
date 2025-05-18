@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://e86lmo70nfay"]
+[gd_scene load_steps=7 format=3 uid="uid://e86lmo70nfay"]
 
 [ext_resource type="Script" uid="uid://kllfyyxrrjly" path="res://Scripts/Controlers/control.gd" id="1_crttf"]
+[ext_resource type="Texture2D" uid="uid://ddulnw1f258ot" path="res://Assets/Gus Assets/cor.png" id="2_40h0n"]
 [ext_resource type="Texture2D" uid="uid://d1s7as1giyoeu" path="res://Assets/Gus Assets/capa_copiar.jpg" id="2_crttf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_62e2m"]
 font_size = 64
 outline_size = 6
 outline_color = Color(1, 1, 0.596078, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_40h0n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_crttf"]
 outline_size = 2
@@ -54,10 +57,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -44.0
-offset_right = 97.0
-offset_bottom = 76.0
+offset_left = -381.0
+offset_top = -51.0
+offset_right = -169.0
+offset_bottom = 139.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -72,13 +75,47 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SAIR DO JOGO"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
+[node name="Creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "CRÉDITOS"
+
+[node name="Imagem" type="Sprite2D" parent="VBoxContainer/Creditos"]
+z_index = 1
+position = Vector2(381, -90)
+scale = Vector2(7.89726, 4.83582)
+texture = ExtResource("2_40h0n")
+
+[node name="CloseCreditos" type="Button" parent="VBoxContainer/Creditos/Imagem"]
+offset_left = -71.6071
+offset_top = -64.9321
+offset_right = -53.6071
+offset_bottom = -33.9321
+scale = Vector2(0.32, 0.32)
+text = "X"
+flat = true
+
+[node name="RichTextLabel" type="Label" parent="VBoxContainer/Creditos/Imagem"]
+offset_left = -61.8569
+offset_top = -50.0432
+offset_right = 289.143
+offset_bottom = 87.9568
+scale = Vector2(0.336479, 0.660864)
+text = "Game & Level desgin - André Tavares Teixeira
+Programing - Jeferson Moreira de Amurim
+Art - Gustavo Resende Yansen
+Sound - Brackeys, Asbjørn Thirslund"
+label_settings = SubResource("LabelSettings_40h0n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Capa" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(576, 323.5)
 scale = Vector2(0.6, 0.59537)
 texture = ExtResource("2_crttf")
 
-[node name="Creditos" type="Label" parent="."]
+[node name="Nomes" type="Label" parent="."]
 layout_mode = 0
 offset_left = 963.0
 offset_top = 532.0
@@ -93,3 +130,5 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos/Imagem/CloseCreditos" to="." method="_on_close_creditos_pressed"]

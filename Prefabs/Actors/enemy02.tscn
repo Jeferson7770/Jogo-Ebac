@@ -108,8 +108,9 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
-position = Vector2(-4, -23)
-scale = Vector2(0.0419444, 0.0319444)
+position = Vector2(-3, -2)
+scale = Vector2(0.0577778, 0.244444)
+energy = 2.0
 texture = ExtResource("4_mxyi1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

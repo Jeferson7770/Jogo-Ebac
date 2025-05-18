@@ -3,7 +3,7 @@ extends StaticBody2D # Ou o tipo de PhysicsBody2D que você está usando
 ## Caminho para o nó da porta que este cristal controla.
 @export var no_porta_associada: NodePath
 ## Tempo em segundos que o cristal precisa ser iluminado para ativar a porta.
-@export var tempo_para_ativar: float = 3.0
+@export var tempo_para_ativar: float = 2.0
 
 var porta_alvo: Node2D
 var activation_timer: Timer

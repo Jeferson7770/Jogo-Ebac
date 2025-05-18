@@ -146,3 +146,4 @@ target_position = Vector2(23.7381, 2.85714)
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_rs2v7")
+bus = &"SFX_Monter"

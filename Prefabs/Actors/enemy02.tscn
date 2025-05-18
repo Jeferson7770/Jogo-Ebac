@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dytolgulx5u7e"]
+[gd_scene load_steps=18 format=3 uid="uid://dytolgulx5u7e"]
 
 [ext_resource type="Script" uid="uid://c7mlp1dp4x2jp" path="res://Scripts/enemy.gd" id="1_ngbna"]
 [ext_resource type="Texture2D" uid="uid://dn5hbx6tqmbd1" path="res://Assets/Enemies/Enemy02_Idle.png" id="2_08ri4"]
 [ext_resource type="Texture2D" uid="uid://y0h33ybvjvlq" path="res://Assets/Enemies/Enemy02_Chasing.png" id="3_mxyi1"]
 [ext_resource type="Texture2D" uid="uid://l8xn3d8qbgqo" path="res://Assets/Lights/light.jpg" id="4_mxyi1"]
+[ext_resource type="AudioStream" uid="uid://jiu1hef4unms" path="res://Assets/Assets_andre/Brachys Assets/brackeys_platformer_assets/sounds/hurt.wav" id="5_b6vxp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b6vxp"]
 radius = 9.0
@@ -121,3 +122,7 @@ texture = ExtResource("4_mxyi1")
 position = Vector2(-8, -9)
 scale = Vector2(1, 8.6)
 target_position = Vector2(15, 1.97674)
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_b6vxp")
+bus = &"SFX_Monter"

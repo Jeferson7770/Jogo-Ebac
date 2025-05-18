@@ -354,7 +354,7 @@ collision_layer = 5
 
 [node name="Enemy" parent="." instance=ExtResource("10_ryu3p")]
 z_index = 1
-position = Vector2(-178, -437)
+position = Vector2(-182, -299)
 collision_layer = 4
 collision_mask = 4
 
@@ -456,3 +456,13 @@ no_inimigo_para_ativar = NodePath("../Enemy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawnar Inimigo"]
 position = Vector2(-46, 12)
 shape = SubResource("RectangleShape2D_qcq4q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 40.0
+offset_top = -117.0
+offset_right = 88.0
+offset_bottom = -94.0
+scale = Vector2(0.7, 0.7)
+text = "SHINE"
+horizontal_alignment = 1
+vertical_alignment = 1
